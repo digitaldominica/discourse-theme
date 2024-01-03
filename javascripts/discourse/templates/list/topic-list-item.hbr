@@ -73,9 +73,9 @@
     <a class="num views {{topic.viewsHeat}}" href="{{topic.summaryUrl}}">
       {{number topic.views numberKey="views_long"}} {{d-icon "mdo-assessment"}}
     </a>
-    {{#if participantGroups}}
+    
       {{raw "list/participant-groups" groups=participantGroups}}
-    {{/if}}
+    
     <a href="{{topic.lastPostUrl}}" data-user-card="{{topic.last_poster_username}}" class="latest-poster-tlist">
       {{avatar topic.lastPosterUser imageSize="tiny"}}
     </a>
