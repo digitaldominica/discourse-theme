@@ -65,7 +65,7 @@
   </span>
   <div class="link-bottom-line">
     <div class="left">
-    <a> {{d-icon "mdo-forum"}} </a> 
+    <a class="tl-posters"> {{d-icon "mdo-forum"}} </a> 
     {{raw "list/custom-posters-column" posters=topic.featuredUsers}}
   </div>
   <div class="right">
