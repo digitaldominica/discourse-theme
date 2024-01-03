@@ -28,7 +28,7 @@
           <div class="name-and-date">
             <span class="full-name-tlist">{{topic.posters.[0].user.name}}</span>
             <span class="username">{{topic.posters.[0].user.username}}</span>
-            <span class="list-date">{{theme-i18n "created_at"}} {{format-date topic.createdAt format="tiny"}}</span>
+            <span class="list-date">{{d-icon "mdo-forum"}} {{format-date topic.createdAt format="tiny"}}</span>
           </div>
         </a>
       </div>
@@ -85,7 +85,7 @@
     </a>-->
     
     <a class="latest-activity-tlist {{view.likesHeat}}" href="{{topic.lastPostUrl}}">
-      {{~format-date topic.bumpedAt format="tiny" noTitle="true"~}} {{d-icon "history"}}
+      {{~format-date topic.bumpedAt format="tiny" noTitle="true"~}} {{d-icon "mdo-schedule"}}
     </a>
     {{raw "list/custom-posts-count-column" topic=topic}}
   </div>
