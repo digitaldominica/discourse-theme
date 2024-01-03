@@ -77,9 +77,9 @@
 
     {{raw "list/posters-column" posters=topic.featuredUsers}}
 
-    <a href="{{topic.lastPostUrl}}" data-user-card="{{topic.last_poster_username}}" class="latest-poster-tlist">
+   <!-- <a href="{{topic.lastPostUrl}}" data-user-card="{{topic.last_poster_username}}" class="latest-poster-tlist">
       {{avatar topic.lastPosterUser imageSize="tiny"}}
-    </a>
+    </a>-->
     
     <a class="latest-activity-tlist {{view.likesHeat}}" href="{{topic.lastPostUrl}}">
       {{~format-date topic.bumpedAt format="tiny" noTitle="true"~}} {{d-icon "history"}}
