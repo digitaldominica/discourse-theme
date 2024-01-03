@@ -1,7 +1,9 @@
-{{#each posters as |poster index|}}
-  {{#if poster.moreCount}}
-    <a class="posters-more-count">{{poster.moreCount}}</a>
-  {{else if (not (and (eq index (sub (length posters) 1)) (eq poster.user.id Discourse.User.current().id)))}} <!-- Check if it's not the last poster and not the original poster -->
-    <a href="{{poster.user.path}}" data-user-card="{{poster.user.username}}" class="{{poster.extraClasses}} latest-poster-tlist">{{avatar poster avatarTemplatePath="user.avatar_template" usernamePath="user.username" namePath="user.name" imageSize="small"}}</a>
-  {{/if}}
-{{/each}}
+{{#let (filter posters (fn |poster| (not (eq poster.user.id Discourse.User.current().id)))) as |filteredPosters|}}
+  {{#each filteredPosters as |poster index|}}
+    {{#if poster.moreCount}}
+      <a class="posters-more-count">{{poster.moreCount}}</a>
+    {{else}}
+      <a href="{{poster.user.path}}" data-user-card="{{poster.user.username}}" class="{{poster.extraClasses}} latest-poster-tlist">{{avatar poster avatarTemplatePath="user.avatar_template" usernamePath="user.username" namePath="user.name" imageSize="small"}}</a>
+    {{/if}}
+  {{/each}}
+{{/let}}
