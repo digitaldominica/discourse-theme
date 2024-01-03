@@ -64,8 +64,10 @@
     </div>
   </span>
   <div class="link-bottom-line">
+    <div class="left">
     {{raw "list/posters-column" posters=topic.featuredUsers}}
-
+  </div>
+  <div class="right">
     {{raw "list/action-list" topic=topic postNumbers=topic.liked_post_numbers className="likes" icon="heart"}}
     {{#if hasLikes}}
       <a class="likes likes-tlist" href="{{topic.summaryUrl}}">
@@ -75,7 +77,7 @@
     <a class="num views {{topic.viewsHeat}}" href="{{topic.summaryUrl}}">
       {{number topic.views numberKey="views_long"}} {{d-icon "mdo-assessment"}}
     </a>
-    
+  </div>
 
 
    <!-- <a href="{{topic.lastPostUrl}}" data-user-card="{{topic.last_poster_username}}" class="latest-poster-tlist">
