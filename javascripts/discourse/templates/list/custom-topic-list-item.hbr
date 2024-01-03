@@ -75,9 +75,9 @@
         {{number topic.like_count}} {{d-icon "heart"}}
       </a>
     {{/if}}
-    <a class="num views {{topic.viewsHeat}}" href="{{topic.summaryUrl}}">
+    <!--<a class="num views {{topic.viewsHeat}}" href="{{topic.summaryUrl}}">
       {{number topic.views numberKey="views_long"}} {{d-icon "mdo-assessment"}}
-    </a>
+    </a>-->
     <a class="latest-activity-tlist {{view.likesHeat}}" href="{{topic.lastPostUrl}}">
       {{~format-date topic.bumpedAt format="tiny" noTitle="true"~}} {{d-icon "mdo-schedule"}}
     </a>
