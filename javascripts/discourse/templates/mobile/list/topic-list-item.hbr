@@ -28,7 +28,7 @@
           <div class="name-and-date">
             <span class="full-name-tlist">{{topic.posters.[0].user.name}}</span>
             <span class="username">{{topic.posters.[0].user.username}}</span>
-            <span class="list-date">{{theme-i18n "created_at"}} {{format-date topic.createdAt format="tiny"}}</span>
+            <span class="list-date">{{d-icon "mdo-forum"}} {{format-date topic.createdAt format="tiny"}}</span>
           </div>
         </a>
       </div>
@@ -64,20 +64,29 @@
     </div>
   </span>
   <div class="link-bottom-line">
-    {{raw "list/action-list" topic=topic postNumbers=topic.liked_post_numbers className="likes" icon="heart"}}
-    {{#if hasLikes}}
-      <a class="likes likes-tlist" href="{{topic.summaryUrl}}">
-        {{number topic.like_count}} {{d-icon "heart"}}
-      </a>
-    {{/if}}
+    <div class="left">
+      {{raw "list/action-list" topic=topic postNumbers=topic.liked_post_numbers className="likes" icon="heart"}}
+      {{#if hasLikes}}
+        <a class="likes likes-tlist" href="{{topic.summaryUrl}}">
+          {{number topic.like_count}} {{d-icon "heart"}}
+        </a>
+      {{/if}}
+    {{raw "list/posters-column" posters=topic.featuredUsers}}
+  </div>
+  <div class="right">
+   
     <a class="num views {{topic.viewsHeat}}" href="{{topic.summaryUrl}}">
       {{number topic.views numberKey="views_long"}} {{d-icon "mdo-assessment"}}
     </a>
-    <a href="{{topic.lastPostUrl}}" data-user-card="{{topic.last_poster_username}}" class="latest-poster-tlist">
+  </div>
+
+
+   <!-- <a href="{{topic.lastPostUrl}}" data-user-card="{{topic.last_poster_username}}" class="latest-poster-tlist">
       {{avatar topic.lastPosterUser imageSize="tiny"}}
-    </a>
+    </a>-->
+    
     <a class="latest-activity-tlist {{view.likesHeat}}" href="{{topic.lastPostUrl}}">
-      {{~format-date topic.bumpedAt format="tiny" noTitle="true"~}} {{d-icon "history"}}
+      {{~format-date topic.bumpedAt format="tiny" noTitle="true"~}} {{d-icon "mdo-schedule"}}
     </a>
     {{raw "list/custom-posts-count-column" topic=topic}}
   </div>
