@@ -68,7 +68,7 @@
   <div class="link-bottom-line">
     <div class="left">
     <a class="tl-posters"> {{d-icon "mdo-reply"}} </a> 
-    <a href="{{topic.lastPostUrl}}" data-user-card="{{topic.last_poster_username}}" class="latest-poster-tlist">
+    <a href="{{topic.lastPostUrl}}"  class="latest-poster-tlist">
       {{avatar topic.lastPosterUser imageSize="tiny"}}
     </a>
   </div>
