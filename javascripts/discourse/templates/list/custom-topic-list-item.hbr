@@ -61,12 +61,16 @@
         </a>
       {{/if}}-->
       {{discourse-tags topic mode="list" tagsForUser=tagsForUser}}
+      {{raw "list/custom-posters-column" posters=topic.featuredUsers}}
+
     </div>
   </span>
   <div class="link-bottom-line">
     <div class="left">
     <a class="tl-posters"> {{d-icon "mdo-reply"}} </a> 
-    {{raw "list/custom-posters-column" posters=topic.featuredUsers}}
+    <a href="{{topic.lastPostUrl}}" data-user-card="{{topic.last_poster_username}}" class="latest-poster-tlist">
+      {{avatar topic.lastPosterUser imageSize="tiny"}}
+    </a>
   </div>
   <div class="right">
     {{raw "list/action-list" topic=topic postNumbers=topic.liked_post_numbers className="likes" icon="heart"}}
@@ -83,9 +87,7 @@
     </a>
     {{raw "list/custom-posts-count-column" topic=topic}}
   </div>
-   <!-- <a href="{{topic.lastPostUrl}}" data-user-card="{{topic.last_poster_username}}" class="latest-poster-tlist">
-      {{avatar topic.lastPosterUser imageSize="tiny"}}
-    </a>-->
+   <!-- -->
     </div>
 </div>
 </div>
