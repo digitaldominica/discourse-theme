@@ -67,12 +67,9 @@
   <div class="link-bottom-line">
     <div class="left">
     <a class="tl-posters"> {{d-icon "mdo-reply"}} </a> 
-    <!--<a href="{{topic.lastPostUrl}}"  class="latest-poster-tlist">
+    <a href="{{topic.lastPostUrl}}"  class="latest-poster-tlist">
       {{avatar topic.lastPosterUser imageSize="tiny"}}
-    </a>-->
-    <UserLink @user={{this.topic.lastPosterUser}}>
-      {{avatar this.topic.lastPosterUser imageSize="tiny"}}
-    </UserLink>
+    </a>
   </div>
   <div class="right">
     {{raw "list/action-list" topic=topic postNumbers=topic.liked_post_numbers className="likes" icon="heart"}}
