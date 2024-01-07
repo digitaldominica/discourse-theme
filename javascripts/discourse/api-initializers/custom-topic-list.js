@@ -16,7 +16,7 @@ export default {
           const tags = this.topic.get("tags").map(tag => tag.toLowerCase());
 
           if (category === 23 && tags.includes("featured")) {
-            const template = findRawTemplate("list/news-topic-list");
+            const template = findRawTemplate("list/news-topic-list-item");
             if (template) {
               this.set(
                 "topicListItemContents",
