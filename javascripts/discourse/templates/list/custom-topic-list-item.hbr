@@ -50,7 +50,8 @@
           {{raw "list/topic-excerpt" topic=topic}}
         </div>
       {{/if}}
-     <!-- {{#if topic.image_url}}
+      {{#if (eq topic.category_id 23)}}
+      {{#if topic.image_url}}
         <a href="{{topic.lastUnreadUrl}}">
           <div class="topic-image">
             {{#if (theme-setting "topic_image_backdrop")}}
@@ -59,7 +60,8 @@
             <img src="{{topic.image_url}}" class="topic-image__img" loading="lazy">
           </div>
         </a>
-      {{/if}}-->
+      {{/if}}
+      {{/if}}
       {{discourse-tags topic mode="list" tagsForUser=tagsForUser}}
 
     </div>
