@@ -14,6 +14,8 @@ export default {
         renderTopicListItem() {
           const category = this.topic.get("category_id");
           const tags = this.topic.get("tags").map(tag => tag.toLowerCase());
+          const isDiscoveryPage = api.container.lookup("controller:discovery").get("discoveryRoute");
+
 
           if (category === 23 && tags.includes("featured")) {
             const template = findRawTemplate("list/news-topic-list-item");
