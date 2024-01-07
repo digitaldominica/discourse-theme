@@ -84,6 +84,24 @@ export default {
           document.body.classList.remove("fkb-panel-hidden");
         }
       });*/
+
+       // Add this condition to check if the current topic is in category 23 and has the featured tag
+       api.onPageChange((url, title) => {
+        const topic = Discourse.currentTopic();
+        const categoryId = topic.categoryId;
+        const tags = topic.tags;
+
+        if (categoryId === 23 && tags.includes("featured")) {
+          const customTemplate = findRawTemplate("list/news-topic-list-item");
+          if (customTemplate) {
+            this.set(
+              "topicListItemContents", 
+              htmlSafe(customTemplate(this))
+            );
+          }
+        }
+      });
+   
     });
   },
 };
