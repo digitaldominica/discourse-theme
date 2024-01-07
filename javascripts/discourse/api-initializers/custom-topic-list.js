@@ -12,44 +12,26 @@ export default {
         pluginId: "its-template",
 
         renderTopicListItem() {
-          const category = this.topic.get("category_id");
-          const tags = this.topic.get("tags").map(tag => tag.toLowerCase());
-          const isDiscoveryPage = api.container.lookup("controller:discovery").get("discoveryRoute");
+          const categoryId = this.get("topic.categoryId");
+          const tags = this.get("topic.tags");
+          const isFeatured = tags && tags.includes("featured");
 
+          const isDiscoveryPage = window.location.pathname.includes("/discovery");
 
-          if (category === 23 && tags.includes("featured")) {
-            const template = findRawTemplate("list/news-topic-list-item");
-            if (template) {
-              this.set(
-                "topicListItemContents",
-                htmlSafe(template(this))
-              );
-              schedule("afterRender", () => {
-                if (this.isDestroyed || this.isDestroying) {
-                  return;
-                }
-                if (this.selected && this.selected.includes(this.topic)) {
-                  this.element.querySelector("input.bulk-select").checked = true;
-                  this.element.querySelector(".bulk-select.topic-list-data label").classList.add("selected");
-                }             
-                if (this._shouldFocusLastVisited()) {
-                  const title = this._titleElement();
-                  if (title) {
-                    title.addEventListener("focus", this._onTitleFocus);
-                    title.addEventListener("blur", this._onTitleBlur);
-                  }
-                }
-              });
-            }
-          } else {
-            // Use the default template for other cases
-            const template = findRawTemplate("list/custom-topic-list-item");
-            if (template) {
-              this.set(
-                "topicListItemContents",
-                htmlSafe(template(this))
-              );
-              schedule("afterRender", () => {
+          let templateName = "list/custom-topic-list-item";
+
+          if (isDiscoveryPage && categoryId === 23 && isFeatured) {
+            templateName = "list/news-topic-list-item";
+          }
+
+          const template = findRawTemplate(templateName);
+
+          if (template) {
+            this.set(
+              "topicListItemContents",
+              htmlSafe(template(this))
+            );
+            schedule("afterRender", () => {
               if (this.isDestroyed || this.isDestroying) {
                 return;
               }
@@ -66,7 +48,6 @@ export default {
               }
             });            
           }
-        }
         },
       });
 
@@ -104,6 +85,8 @@ export default {
           document.body.classList.remove("bulk-still-active");
         }
       });
+      
+
     });
   },
 };
