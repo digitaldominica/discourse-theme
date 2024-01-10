@@ -12,23 +12,10 @@ export default {
         pluginId: "its-template",
 
         renderTopicListItem() {
-          const categoryId = this.get("topic.categoryId");
-          const tags = this.get("topic.tags");
-          const isFeatured = tags && tags.includes("featured");
-
-          const isDiscoveryPage = window.location.pathname.includes("/discovery");
-
-          let templateName = "list/custom-topic-list-item";
-
-          if (isDiscoveryPage && categoryId === 23 && isFeatured) {
-            templateName = "list/news-topic-list-item";
-          }
-
-          const template = findRawTemplate(templateName);
-
+          const template = findRawTemplate("list/custom-topic-list-item");
           if (template) {
             this.set(
-              "topicListItemContents",
+              "topicListItemContents", 
               htmlSafe(template(this))
             );
             schedule("afterRender", () => {
@@ -51,6 +38,16 @@ export default {
         },
       });
 
+      api.modifyClass("component:discovery/topics", {
+        pluginId: "new-new",
+        get renderNewListHeaderControls() {
+          return (
+            this.showTopicsAndRepliesToggle &&
+            !this.args.bulkSelectEnabled
+          );
+        }
+      });
+      
       api.modifyClass("component:topic-list", {
         pluginId: "toggle-bulk",
 
@@ -86,7 +83,17 @@ export default {
         }
       });
       
-
+      /*api.onPageChange((url, title) => {
+        const fkbHidden = localStorage.getItem("fkb_panel_hidden") === "true";
+        const fkbVisible = localStorage.getItem("fkb_panel_hidden") === "false";
+        const isHidden = document.body.classList.contains("fkb-panel-hidden");
+        
+        if (fkbHidden && !isHidden) {
+          document.body.classList.add("fkb-panel-hidden");
+        } else if (fkbVisible && isHidden) {
+          document.body.classList.remove("fkb-panel-hidden");
+        }
+      });*/
     });
   },
 };
