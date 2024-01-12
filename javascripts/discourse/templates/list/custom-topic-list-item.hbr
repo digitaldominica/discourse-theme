@@ -85,7 +85,7 @@
       {{number topic.views numberKey="views_long"}} {{d-icon "mdo-assessment"}}
     </a>-->
     <a class="latest-activity-tlist {{view.likesHeat}}" href="{{topic.lastPostUrl}}">
-      {{~format-date topic.bumpedAt format="tiny" noTitle="true"~}} {{d-icon "mdo-schedule"}}
+      {{~format-date topic.bumpedAt format="tiny" leaveAgo="true" noTitle="true"~}} {{d-icon "mdo-schedule"}}
     </a>
     {{raw "list/custom-posts-count-column" topic=topic}}
   </div>
