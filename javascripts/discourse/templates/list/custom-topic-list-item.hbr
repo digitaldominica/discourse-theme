@@ -36,14 +36,10 @@
     <div class="link-middle-line" id="{{#if topic.hasExcerpt}}link-middle-line-excerpt{{/if}}">
       <div class="topic-title">
         {{~raw "topic-status" topic=topic}}
-        {{~#link-to "discovery.topic" topic}}
-          {{~#if topic.featured_link}}
-            {{~topic-featured-link topic}}
-          {{~else}}
-            {{~topic.title}}
-          {{~/if}}
-        {{~/link-to}}
-        
+        {{~topic-link topic class="raw-link raw-topic-link"}}
+        {{~#if topic.featured_link}}
+          {{~topic-featured-link topic}}
+        {{~/if}}
         {{~#if showTopicPostBadges}}
           {{~raw "topic-post-badges" unreadPosts=topic.unread_posts unseen=topic.unseen url=topic.lastUnreadUrl newDotText=newDotText}}
         {{~/if}}
