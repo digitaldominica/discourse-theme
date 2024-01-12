@@ -28,7 +28,7 @@
           <div class="name-and-date">
             <span class="full-name-tlist">{{topic.posters.[0].user.name}}</span>
             <span class="username">{{topic.posters.[0].user.username}}</span>
-            <span class="list-date">{{d-icon "mdo-push_pin"}} {{format-date topic.createdAt format="tiny"}}</span>
+            <span class="list-date">{{d-icon "mdo-push_pin"}} {{format-date topic.createdAt format="medium" noTitle="true" leaveAgo="true"}}</span>
           </div>
         </a>
       </div>
