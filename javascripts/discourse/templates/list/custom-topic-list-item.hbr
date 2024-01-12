@@ -36,11 +36,11 @@
     <div class="link-middle-line" id="{{#if topic.hasExcerpt}}link-middle-line-excerpt{{/if}}">
       <div class="topic-title">
         {{~raw "topic-status" topic=topic}}
-        <a href="{{topic.url}}">
+        <a href="{{topic.url}}" class="raw-link raw-topic-link">
           {{~#if topic.featured_link}}
             {{~topic-featured-link topic}}
           {{~else}}
-            {{~topic.title }}
+            {{~topic.title}}
           {{~/if}}
         </a>
         {{~#if showTopicPostBadges}}
