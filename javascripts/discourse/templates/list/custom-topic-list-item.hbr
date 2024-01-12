@@ -40,11 +40,7 @@
           {{~#if topic.featured_link}}
             {{~topic-featured-link topic}}
           {{~else}}
-            {{~#if topic.short_title}}
-              {{~topic.short_title}}
-            {{~else}}
-              {{~topic.title}}
-            {{~/if}}
+            {{~topic.title class="raw-link raw-topic-link"}}
           {{~/if}}
         </a>
         {{~#if showTopicPostBadges}}
