@@ -71,7 +71,7 @@
     <div class="left">
     <a class="tl-posters"> {{d-icon "mdo-reply"}} </a> 
     <a href="{{topic.lastPostUrl}}"  class="latest-poster-tlist">
-      {{avatar topic.lastPosterUser imageSize="tiny"}}
+      {{avatar topic.lastPosterUser imageSize="tiny"}} {{js.last_reply_lowercase}}
     </a>
   </div>
   <div class="right">
