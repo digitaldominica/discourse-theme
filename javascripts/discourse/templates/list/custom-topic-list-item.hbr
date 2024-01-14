@@ -74,7 +74,7 @@
       {{topic.lastPosterUser.username}}&nbsp;{{avatar topic.lastPosterUser imageSize="tiny"}}
     </a>
     <a class="latest-activity-tlist {{view.likesHeat}}" href="{{topic.lastPostUrl}}">
-      {{~format-date topic.bumpedAt format="tiny" leaveAgo="true" noTitle="true"~}} {{d-icon "mdo-schedule"}}
+      {{~format-date topic.bumpedAt format="medium" leaveAgo="true" noTitle="true"~}} {{d-icon "mdo-schedule"}}
     </a>
   </div>
   <div class="right">
