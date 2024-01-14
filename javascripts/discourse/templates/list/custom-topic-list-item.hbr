@@ -70,22 +70,21 @@
   <div class="link-bottom-line">
     <div class="left">
 
-{{#if topic.lastPostNumber}}
-  <a class="tl-posters"> {{d-icon "mdo-reply"}} </a> 
-  <a href="{{topic.lastPostUrl}}" class="latest-poster-tlist">
-    {{topic.lastPosterUser.name}} &nbsp; {{avatar topic.lastPosterUser imageSize="tiny"}}
-  </a>
-  <a class="latest-activity-tlist {{view.likesHeat}}" href="{{topic.lastPostUrl}}">
-    {{~format-date topic.bumpedAt format="medium" leaveAgo="true" noTitle="true"~}} {{d-icon "mdo-schedule"}}
-  </a>
-{{else}}
-
-<a class="tl-posters">{{d-icon "mdo-push_pin"}} </a> 
-<a href="{{topic.url}}">
-  {{topic.posters.[0].user.name}} &nbsp; {{avatar topic.posters.[0].user imageSize="tiny"}}
-</a>
-<a class="list-date">{{format-date topic.createdAt format="medium" noTitle="true" leaveAgo="true"}} {{d-icon "mdo-schedule"}}</a>
-{{/if}}
+      {{#if topic.replies}}
+      <a class="tl-posters">{{d-icon "mdo-reply"}} </a>
+      <a href="{{topic.lastPostUrl}}" class="latest-poster-tlist">
+        {{topic.lastPosterUser.name}} &nbsp; {{avatar topic.lastPosterUser imageSize="tiny"}}
+      </a>
+      <a class="latest-activity-tlist {{view.likesHeat}}" href="{{topic.lastPostUrl}}">
+        {{~format-date topic.bumpedAt format="medium" leaveAgo="true" noTitle="true"~}} {{d-icon "mdo-schedule"}}
+      </a>
+    {{else}}
+      <a class="tl-posters">{{d-icon "mdo-push_pin"}} </a>
+      <a href="{{topic.url}}">
+        {{topic.posters.[0].user.name}} &nbsp; {{avatar topic.posters.[0].user imageSize="tiny"}}
+      </a>
+      <a class="list-date">{{format-date topic.createdAt format="medium" noTitle="true" leaveAgo="true"}} {{d-icon "mdo-schedule"}}</a>
+    {{/if}}
 
   </div>
   <div class="right">
