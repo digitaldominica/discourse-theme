@@ -71,8 +71,10 @@
     <div class="left">
     <a class="tl-posters"> {{d-icon "mdo-reply"}} </a> 
     <a href="{{topic.lastPostUrl}}"  class="latest-poster-tlist">
-      {{avatar topic.lastPosterUser imageSize="tiny"}} {{topic.lastPosterUser.username}}
-
+      {{topic.lastPosterUser.username}}&nbsp;{{avatar topic.lastPosterUser imageSize="tiny"}}
+    </a>
+    <a class="latest-activity-tlist {{view.likesHeat}}" href="{{topic.lastPostUrl}}">
+      {{~format-date topic.bumpedAt format="tiny" leaveAgo="true" noTitle="true"~}} {{d-icon "mdo-schedule"}}
     </a>
   </div>
   <div class="right">
@@ -85,9 +87,7 @@
     <!--<a class="num views {{topic.viewsHeat}}" href="{{topic.summaryUrl}}">
       {{number topic.views numberKey="views_long"}} {{d-icon "mdo-assessment"}}
     </a>-->
-    <a class="latest-activity-tlist {{view.likesHeat}}" href="{{topic.lastPostUrl}}">
-      {{~format-date topic.bumpedAt format="tiny" leaveAgo="true" noTitle="true"~}} {{d-icon "mdo-schedule"}}
-    </a>
+  
     {{raw "list/custom-posts-count-column" topic=topic}}
   </div>
    <!-- -->
