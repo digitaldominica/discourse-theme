@@ -70,13 +70,13 @@
   <div class="link-bottom-line">
     <div class="left">
 
-      {{#if topic.posters.[0]}}
+      {{#if topic.posts_count}}
       <a class="tl-posters">{{d-icon "mdo-push_pin"}} </a>
       <a href="{{topic.url}}">
         {{avatar topic.posters.[0].user imageSize="tiny"}} &nbsp; {{topic.posters.[0].user.name}}
       </a>
       <a class="list-date">{{format-date topic.createdAt format="medium" noTitle="true" leaveAgo="true"}} {{d-icon "mdo-schedule"}}</a>
-     {{else if topic.posts_count}}
+     {{else if topic.posters.[0]}}
     <a class="tl-posters">{{d-icon "mdo-reply"}} </a>
     <a href="{{topic.lastPostUrl}}" class="latest-poster-tlist">
       {{avatar topic.lastPosterUser imageSize="tiny"}} &nbsp;{{topic.lastPosterUser.name}} 
