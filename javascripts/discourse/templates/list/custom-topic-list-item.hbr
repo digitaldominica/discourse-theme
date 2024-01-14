@@ -70,7 +70,7 @@
   <div class="link-bottom-line">
     <div class="left">
 
-      {{#if topic.replies}}
+      {{#if topic.posts_count}}
       <a class="tl-posters">{{d-icon "mdo-reply"}} </a>
       <a href="{{topic.lastPostUrl}}" class="latest-poster-tlist">
         {{topic.lastPosterUser.name}} &nbsp; {{avatar topic.lastPosterUser imageSize="tiny"}}
