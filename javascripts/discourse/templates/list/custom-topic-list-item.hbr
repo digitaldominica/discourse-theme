@@ -71,7 +71,7 @@
     <div class="left">
     <a class="tl-posters"> {{d-icon "mdo-reply"}} </a> 
     <a href="{{topic.lastPostUrl}}"  class="latest-poster-tlist">
-      {{topic.lastPosterUser.username}}&nbsp;{{avatar topic.lastPosterUser imageSize="tiny"}}
+      {{topic.lastPosterUser.user.name}}&nbsp;{{avatar topic.lastPosterUser imageSize="tiny"}}
     </a>
     <a class="latest-activity-tlist {{view.likesHeat}}" href="{{topic.lastPostUrl}}">
       {{~format-date topic.bumpedAt format="medium" leaveAgo="true" noTitle="true"~}} {{d-icon "mdo-schedule"}}
