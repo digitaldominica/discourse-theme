@@ -76,7 +76,7 @@
         {{avatar topic.posters.[0].user imageSize="tiny"}} &nbsp; {{topic.posters.[0].user.name}}
       </a>
       <a class="list-date">{{format-date topic.createdAt format="medium" noTitle="true" leaveAgo="true"}} {{d-icon "mdo-schedule"}}</a>
-    {{else}}
+     {{else if topic.posts_count}}
     <a class="tl-posters">{{d-icon "mdo-reply"}} </a>
     <a href="{{topic.lastPostUrl}}" class="latest-poster-tlist">
       {{avatar topic.lastPosterUser imageSize="tiny"}} &nbsp;{{topic.lastPosterUser.name}} 
