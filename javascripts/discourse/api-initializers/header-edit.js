@@ -94,14 +94,6 @@ export default {
       //  if (currentUser !== null) {
       //    api.addToHeaderIcons("header-user-new");
       //  }
-      const site = api.container.lookup("service:site");
-      api.reopenWidget("header", {
-        didRenderWidget() {
-           if (currentUser !== null) {
-           api.addToHeaderIcons("header-user-new");
-          }
-        },
-      });
     });
   },
 };
