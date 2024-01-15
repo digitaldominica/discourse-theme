@@ -69,7 +69,7 @@
   </span>
   <div class="link-bottom-line">
     <div class="left">
-      {{#if topic.lastPosterUser}}
+     
   {{#if (ne topic.lastPosterUser.id topic.posters.[0].user.id)}}
       <a href="{{topic.lastPostUrl}}" class="latest-poster-tlist">
        {{d-icon "mdo-reply"}}&nbsp;{{avatar topic.lastPosterUser imageSize="tiny"}}&nbsp;{{topic.lastPosterUser.name}}
@@ -77,7 +77,7 @@
       <a class="latest-activity-tlist {{view.likesHeat}}"   href="{{topic.lastPostUrl}}">
         {{~format-date topic.bumpedAt format="medium" leaveAgo="true" noTitle="true"~}}
       </a>
-      {{/if}}      
+  
       {{/if}}
         
       
