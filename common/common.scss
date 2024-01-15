@@ -38,7 +38,7 @@ body.dark-knight {
 #discord-button,
 #search-button,
 #toggle-hamburger-menu,
-#current-user,
+#current-user, #header-user-new,
 #toggle-messages-menu {
     margin: 0 3px;
 }
@@ -50,7 +50,7 @@ body.dark-knight {
 #discord-button:hover,
 #search-button:hover,
 #toggle-hamburger-menu:hover,
-#current-user:hover,
+#current-user:hover, #header-user-new:hover,
 #toggle-messages-menu:hover {
     background-color: var(--primary-200) !important;
     color: var(--primary-500)!important;
