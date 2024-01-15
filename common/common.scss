@@ -89,7 +89,7 @@ body.dark-knight {
               content: "\00a0·";
             }
           }
-          @extend .detail;
+         // @extend .detail;
           a {
             color: inherit;
             &:hover {
