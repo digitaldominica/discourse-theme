@@ -1,6 +1,6 @@
 <div class={{concatClass "header-user-new" (if isActive "active")}}>
   <button class="header-user-new__button" type="button" {{on "click" this.toggleDropdown}}>
-    {{avatar currentUser}}
+    {{avatar currentUser imageSize="tiny"}}
   </button>
 
   <div class="header-user-new__menu">
