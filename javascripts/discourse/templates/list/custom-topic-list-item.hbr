@@ -69,19 +69,14 @@
   </span>
   <div class="link-bottom-line">
     <div class="left">
-      {{#each posters as |poster|}}
-      {{#if poster.moreCount}}
-      <a class="posters-more-count">{{poster.moreCount}}</a>
-      {{else}}
-      <a href="{{topic.lastPostUrl}}" class="latest-poster-tlist">
+      {{#if hasPosters}}
+       <a href="{{topic.lastPostUrl}}" class="latest-poster-tlist">
         {{d-icon "mdo-reply"}}&nbsp;{{avatar topic.lastPosterUser imageSize="tiny"}}&nbsp;{{topic.lastPosterUser.name}}
        </a>
        <a class="latest-activity-tlist {{view.likesHeat}}"   href="{{topic.lastPostUrl}}">
          {{~format-date topic.bumpedAt format="medium" leaveAgo="true" noTitle="true"~}}
-       </a>
- 
-  {{/if}}
-  {{/each}}
+     </a>
+     {{/if}}
 
   </div>
   <div class="right">
