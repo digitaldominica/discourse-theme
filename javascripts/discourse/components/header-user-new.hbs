@@ -5,7 +5,7 @@
 
   <div class="header-user-new__menu">
     <LinkTo class="header-user-new__profile" @route="user.summary" @model={{this.currentUser}}>
-      {{avatar currentUser}}
+      {{avatar currentUser imageSize="large"}}
       <div class="header-user-new__profile-info">
         <span class="header-user-new__profile-name">
           {{#if currentUser.name}}
