@@ -7,7 +7,7 @@ export default {
   initialize() {
     withPluginApi("0.8", (api) => {
 
-      api.reopenWidget("header-notifications", {
+     /* api.reopenWidget("header-notifications", {
         html(attrs) {
           const { user } = attrs;
 
@@ -90,7 +90,7 @@ export default {
           return contents;
         },
       });
-      
+      */
       const currentUser = api.container.lookup("service:current-user");
         if (currentUser !== null) {
           api.addToHeaderIcons("new-user-icon");
