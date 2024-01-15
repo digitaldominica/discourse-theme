@@ -25,6 +25,22 @@ body.dark-knight {
     transition: box-shadow 0.2s;
 }
 
+.d-header .panel {
+    .user-menu.revamped .bottom-tabs, #user-menu-button-profile {
+      display: none;
+    }
+  }
+
+.header-user-new {
+    &.active {
+      .header-user-new__menu {
+        display: flex;
+      }
+    }
+    .header-user-new__menu {
+      display: none;
+    }
+  }
 
 #discord-button,
 #search-button,
