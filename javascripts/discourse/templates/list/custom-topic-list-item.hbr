@@ -59,31 +59,34 @@
   </span>
   <div class="link-bottom-line">
     <div class="left">
+      {{#if (topic.postsCount != 1)}}
+
        <a href="{{topic.posters.[0].user.userPath}}" data-user-card="{{topic.posters.[0].user.username}}">
         {{d-icon "mdo-push_pin"}}&nbsp; {{avatar topic.posters.[0].user imageSize="tiny"}} &nbsp;{{topic.posters.[0].user.name}}
       </a>
       <a class="list-date"> {{d-icon "mdo-schedule"}} &nbsp;{{format-date topic.createdAt format="tiny" noTitle="true" leaveAgo="true"}}</a>
-      {{raw "list/action-list" topic=topic postNumbers=topic.liked_post_numbers className="likes" icon="heart"}}
-      {{#if hasLikes}}
-        <a class="likes likes-tlist" href="{{topic.summaryUrl}}">
-          {{number topic.like_count}} {{d-icon "heart"}}
-        </a>
-      {{/if}}
+      {{else}}
 
-    
+
+      <a href="{{topic.lastPostUrl}}" data-user-card="{{topic.last_poster_username}}" class="latest-poster-tlist">
+       {{d-icon "mdo-reply"}}&nbsp;{{avatar topic.lastPosterUser imageSize="tiny"}}&nbsp;{{topic.lastPosterUser.name}}
+      </a>
+      <a class="latest-activity-tlist {{view.likesHeat}}"   href="{{topic.lastPostUrl}}">
+        {{~format-date topic.bumpedAt format="medium" leaveAgo="true" noTitle="true"~}}
+      </a>
+      {{/if}}
 
         
       
       
   </div>
   <div class="right">
-    <a href="{{topic.lastPostUrl}}" data-user-card="{{topic.last_poster_username}}" class="latest-poster-tlist">
-      {{d-icon "mdo-reply"}}&nbsp;{{avatar topic.lastPosterUser imageSize="tiny"}}&nbsp;{{topic.lastPosterUser.name}}
-     </a>
-     <a class="latest-activity-tlist {{view.likesHeat}}"   href="{{topic.lastPostUrl}}">
-       {{~format-date topic.bumpedAt format="medium" leaveAgo="true" noTitle="true"~}}
-     </a>
-   
+    {{raw "list/action-list" topic=topic postNumbers=topic.liked_post_numbers className="likes" icon="heart"}}
+    {{#if hasLikes}}
+      <a class="likes likes-tlist" href="{{topic.summaryUrl}}">
+        {{number topic.like_count}} {{d-icon "heart"}}
+      </a>
+    {{/if}}
     <!--<a class="num views {{topic.viewsHeat}}" href="{{topic.summaryUrl}}">
       {{number topic.views numberKey="views_long"}} {{d-icon "mdo-assessment"}}
     </a>-->
