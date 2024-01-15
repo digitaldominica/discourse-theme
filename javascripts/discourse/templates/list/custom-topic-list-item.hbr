@@ -63,7 +63,7 @@
         {{avatar topic.posters.[0].user imageSize="tiny"}} &nbsp;{{topic.posters.[0].user.name}}
       </a>
       <a class="list-date">{{d-icon "mdo-push_pin"}}&nbsp;{{format-date topic.createdAt format="tiny" noTitle="true" leaveAgo="true"}}</a>
-      {{#if (ne topic.posts_count 1)}}
+      {{#if (and topic.posts_count (gt topic.posts_count 1))}}
       <a class="tl-posters"> </a>
       <a href="{{topic.lastPostUrl}}" class="latest-poster-tlist">
         {{avatar topic.lastPosterUser imageSize="tiny"}} &nbsp;{{d-icon "mdo-reply"}}&nbsp;{{topic.lastPosterUser.name}}
@@ -72,6 +72,7 @@
         {{~format-date topic.bumpedAt format="medium" leaveAgo="true" noTitle="true"~}} {{d-icon "mdo-schedule"}}
       </a>
     {{/if}}
+    
       
       
   </div>
