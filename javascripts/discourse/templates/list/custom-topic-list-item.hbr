@@ -78,27 +78,25 @@
      </a>-->
 
      {{#if topic.posters.1.user}}
-  <span class="tli__last-reply">
-    {{d-icon "reply"}}
+    
     <a href="{{topic.lastPoster.user.userPath}}" data-user-card="{{topic.lastPoster.user.username}}">
-      {{~topic.lastPoster.user.username~}}
+      {{d-icon "mdo-reply"}}&nbsp;{{avatar topic.lastPosterUser imageSize="tiny"}}&nbsp; {{~topic.lastPoster.user.username~}}
     </a>
-    {{theme-i18n "topic_list_item.replied"}}
+    replied
     <a href={{topic.lastPostUrl}}>
       {{format-date topic.bumpedAt format="medium" leaveAgo="true"}}
     </a>
-  </span>
 {{else}}
-  <span class="tli__last-reply">
-    {{d-icon "m-post_add"}}
+  
+  
     <a href="{{topic.posters.0.user.userPath}}" data-user-card="{{topic.posters.0.user.username}}">
-      {{~topic.posters.0.user.username~}}
+      {{d-icon "mdo-push_pin"}} &nbsp; {{avatar topic.posters.[0].user imageSize="tiny"}} &nbsp; {{~topic.posters.0.user.username~}}
     </a>
     posted
     <a href={{topic.lastPostUrl}}>
       {{format-date topic.bumpedAt format="medium" leaveAgo="true"}}
     </a>
-  </span>
+  
 {{/if}}
      
 
