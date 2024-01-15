@@ -69,7 +69,7 @@
   </span>
   <div class="link-bottom-line">
     <div class="left">
-      {{#if (gt topic.posters.length 1)}}
+      {{#if (ne topic.posters.[0].user.id topic.lastPosterUser.id)}}
       <a href="{{topic.lastPostUrl}}" class="latest-poster-tlist">
         {{d-icon "mdo-reply"}}&nbsp;{{avatar topic.lastPosterUser imageSize="tiny"}}&nbsp;{{topic.lastPosterUser.name}}
        </a>
