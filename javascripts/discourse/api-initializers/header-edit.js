@@ -91,10 +91,10 @@ export default {
         },
       });
       
-     /* const currentUser = api.container.lookup("service:current-user");
-        if (currentUser !== null) {
+      const currentUser = api.container.lookup("service:current-user");
+       // if (currentUser !== null) {
           api.addToHeaderIcons("new-user-icon");
-        }*/
+      //  }
     });
   },
 };
