@@ -19,7 +19,7 @@
           {{category-link topic.category}}
         {{/unless}}
       {{/unless}}
-      <!--<div class="author">
+      <div class="author">
         {{~raw-plugin-outlet name="topic-list-before-status"}}
         <a href="{{topic.posters.[0].user.userPath}}" data-user-card="{{topic.posters.[0].user.username}}">
           <div class="topic-list-avatar">
@@ -31,7 +31,7 @@
             <span class="list-date">{{d-icon "mdo-push_pin"}} {{format-date topic.createdAt format="medium" noTitle="true" leaveAgo="true"}}</span>
           </div>
         </a>
-      </div>-->
+      </div>
     </div>
     <div class="link-middle-line" id="{{#if topic.hasExcerpt}}link-middle-line-excerpt{{/if}}">
       <div class="topic-title">
@@ -89,13 +89,13 @@
 {{else}}
   
   
-    <a href="{{topic.posters.0.user.userPath}}" data-user-card="{{topic.posters.0.user.username}}">
+  <!--  <a href="{{topic.posters.0.user.userPath}}" data-user-card="{{topic.posters.0.user.username}}">
       {{d-icon "mdo-push_pin"}} &nbsp; {{avatar topic.posters.[0].user imageSize="tiny"}} &nbsp; {{~topic.posters.0.user.username~}}
     </a>
    
     <a href="{{topic.url}}">
       {{format-date topic.createdAt format="medium" noTitle="true" leaveAgo="true"}}
-    </a>
+    </a>-->
   
 {{/if}}
      
