@@ -64,15 +64,14 @@
       </a>
       <a class="list-date"> {{d-icon "mdo-schedule"}} &nbsp;{{format-date topic.createdAt format="tiny" noTitle="true" leaveAgo="true"}}</a>
       
-      {{#if (ne topic.lastPosterUser.id topic.author.id)}}
 
-      <a href="{{topic.lastPostUrl}}" class="latest-poster-tlist">
+      <a href="{{topic.lastPostUrl}}" data-user-card="{{topic.last_poster_username}}" class="latest-poster-tlist">
        {{d-icon "mdo-reply"}}&nbsp;{{avatar topic.lastPosterUser imageSize="tiny"}}&nbsp;{{topic.lastPosterUser.name}}
       </a>
-      <a class="latest-activity-tlist {{view.likesHeat}}"  data-user-card="{{topic.last_poster_username}}" href="{{topic.lastPostUrl}}">
+      <a class="latest-activity-tlist {{view.likesHeat}}"   href="{{topic.lastPostUrl}}">
         {{~format-date topic.bumpedAt format="medium" leaveAgo="true" noTitle="true"~}} {{d-icon "mdo-schedule"}}
       </a>
-      {{/if}}
+
         
       
       
