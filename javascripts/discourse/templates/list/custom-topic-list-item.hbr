@@ -70,7 +70,7 @@
   <div class="link-bottom-line">
     <div class="left">
      
-  {{#if (ne topic.lastPosterUser.id topic.posters.[0].user.id)}}
+      {{#if (eq topic.lastPosterUser.id topic.posters.[0].user.id)}}
       <a href="{{topic.lastPostUrl}}" class="latest-poster-tlist">
        {{d-icon "mdo-reply"}}&nbsp;{{avatar topic.lastPosterUser imageSize="tiny"}}&nbsp;{{topic.lastPosterUser.name}}
       </a>
