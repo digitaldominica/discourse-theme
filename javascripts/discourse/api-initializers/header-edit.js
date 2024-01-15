@@ -92,7 +92,7 @@ export default {
       });
            const currentUser = api.container.lookup("service:current-user");
         if (currentUser !== null) {
-          //api.addToHeaderIcons("mdo-user");
+          api.addToHeaderIcons("header-user-new");
         }
     });
   },
