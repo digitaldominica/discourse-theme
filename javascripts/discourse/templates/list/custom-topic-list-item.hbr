@@ -28,7 +28,7 @@
           <div class="name-and-date">
             <span class="full-name-tlist">{{topic.posters.[0].user.name}}</span>
             <span class="username">{{topic.posters.[0].user.username}}</span>
-            <span class="list-date">{{theme-i18n "created_at"}} {{format-date topic.createdAt format="tiny"}}</span>
+            <span class="list-date">{{d-icon "mdo-push_pin"}} {{format-date topic.createdAt format="medium" noTitle="true" leaveAgo="true"}}</span>
           </div>
         </a>
       </div>
@@ -69,14 +69,14 @@
   </span>
   <div class="link-bottom-line">
     <div class="left">
-      {{~#if topic.lastPosterUser.[1]}}
+      {{~#if topic.posts_count.[1]}}
        <a href="{{topic.posters.[0].user.userPath}}" data-user-card="{{topic.posters.[0].user.username}}">
         {{d-icon "mdo-push_pin"}}&nbsp; {{avatar topic.posters.[0].user imageSize="tiny"}} &nbsp;{{topic.posters.[0].user.name}}
       </a>
       <a class="list-date"> {{d-icon "mdo-schedule"}} &nbsp;{{format-date topic.createdAt format="tiny" noTitle="true" leaveAgo="true"}}</a>
       {{else}}
 
-      <a href="{{topic.lastPostUrl}}" data-user-card="{{topic.last_poster_username}}" class="latest-poster-tlist">
+      <a href="{{topic.lastPostUrl}}" class="latest-poster-tlist">
        {{d-icon "mdo-reply"}}&nbsp;{{avatar topic.lastPosterUser imageSize="tiny"}}&nbsp;{{topic.lastPosterUser.name}}
       </a>
       <a class="latest-activity-tlist {{view.likesHeat}}"   href="{{topic.lastPostUrl}}">
