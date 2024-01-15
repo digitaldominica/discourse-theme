@@ -3,6 +3,9 @@
     {{avatar currentUser imageSize="tiny"}}
   </button>
 
+  <div class="user-menu revamped menu-panel drop-down">
+<div class="panel-body">
+  <div class="panel-body-contents">
   <div class="header-user-new__menu">
     <LinkTo class="header-user-new__profile" @route="user.summary" @model={{this.currentUser}}>
       {{avatar currentUser imageSize="large"}}
@@ -47,4 +50,7 @@
       </li>
     </ul>
   </div>
+</div>
+</div>
+</div>
 </div>
