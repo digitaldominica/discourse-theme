@@ -62,16 +62,20 @@
        <a href="{{topic.posters.[0].user.userPath}}" data-user-card="{{topic.posters.[0].user.username}}">
         {{avatar topic.posters.[0].user imageSize="tiny"}} &nbsp;{{d-icon "mdo-push_pin"}}&nbsp;{{topic.posters.[0].user.name}}
       </a>
-      <a href="{{topic.url}}" class="list-date">{{format-date topic.createdAt format="tiny" noTitle="true" leaveAgo="true"}} {{d-icon "mdo-schedule"}}</a>
+      <a class="list-date">{{format-date topic.createdAt format="tiny" noTitle="true" leaveAgo="true"}} {{d-icon "mdo-schedule"}}</a>
+      {{!-- Output post count for debugging --}}
+      {{topic.posts_count}}
+      
       {{#if (gt topic.posts_count 1)}}
-      <a class="tl-posters"> </a>
-      <a href="{{topic.lastPostUrl}}" class="latest-poster-tlist">
-        {{avatar topic.lastPosterUser imageSize="tiny"}} &nbsp;{{d-icon "mdo-reply"}}&nbsp;{{topic.lastPosterUser.name}}
-      </a>
-      <a class="latest-activity-tlist {{view.likesHeat}}"  data-user-card="{{topic.last_poster_username}}" href="{{topic.lastPostUrl}}">
-        {{~format-date topic.bumpedAt format="medium" leaveAgo="true" noTitle="true"~}} {{d-icon "mdo-schedule"}}
-      </a>
+        <a class="tl-posters"> </a>
+        <a href="{{topic.lastPostUrl}}" class="latest-poster-tlist">
+          {{avatar topic.lastPosterUser imageSize="tiny"}} &nbsp;{{d-icon "mdo-reply"}}&nbsp;{{topic.lastPosterUser.name}}
+        </a>
+        <a class="latest-activity-tlist {{view.likesHeat}}"  data-user-card="{{topic.last_poster_username}}" href="{{topic.lastPostUrl}}">
+          {{~format-date topic.bumpedAt format="medium" leaveAgo="true" noTitle="true"~}} {{d-icon "mdo-schedule"}}
+        </a>
       {{/if}}
+      
       
   </div>
   <div class="right">
