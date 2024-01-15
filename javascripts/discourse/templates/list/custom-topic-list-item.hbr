@@ -21,6 +21,16 @@
       {{/unless}}
       <div class="author">
         {{~raw-plugin-outlet name="topic-list-before-status"}}
+        <a href="{{topic.posters.[0].user.userPath}}" data-user-card="{{topic.posters.[0].user.username}}">
+          <div class="topic-list-avatar">
+            {{avatar topic.posters.[0].user imageSize="large"}}
+          </div>
+          <div class="name-and-date">
+            <span class="full-name-tlist">{{topic.posters.[0].user.name}}</span>
+            <span class="username">{{topic.posters.[0].user.username}}</span>
+            <span class="list-date">{{theme-i18n "created_at"}} {{format-date topic.createdAt format="tiny"}}</span>
+          </div>
+        </a>
       </div>
     </div>
     <div class="link-middle-line" id="{{#if topic.hasExcerpt}}link-middle-line-excerpt{{/if}}">
@@ -59,7 +69,7 @@
   </span>
   <div class="link-bottom-line">
     <div class="left">
-      {{~#if topic.lastPosterUser.[0]}}
+      {{~#if topic.lastPosterUser.[1]}}
        <a href="{{topic.posters.[0].user.userPath}}" data-user-card="{{topic.posters.[0].user.username}}">
         {{d-icon "mdo-push_pin"}}&nbsp; {{avatar topic.posters.[0].user imageSize="tiny"}} &nbsp;{{topic.posters.[0].user.name}}
       </a>
