@@ -9,7 +9,6 @@ export default {
         api.reopenWidget("header", {
           didRenderWidget() {
             document
-            .querySelector(".d-header")
             if (this.currentUser) {
               api.addToHeaderIcons("header-user-new");
             }
