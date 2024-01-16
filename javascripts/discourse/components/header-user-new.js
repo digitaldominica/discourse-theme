@@ -51,7 +51,7 @@ export default class HeaderUserNew extends Component {
     super.willDestroy();
     document.removeEventListener("click", this.handleDocumentClick);
   }
-
+  //Add user Tab buttons
   get showToggleAnonymousButton() {
     return (
       (this.siteSettings.allow_anonymous_posting &&
