@@ -23,7 +23,6 @@
       </div>
     </LinkTo>
 <ul aria-labelledby={{@ariaLabelledby}}>
-  {{#if this.siteSettings.enable_user_status}}
     <li class="set-user-status">
       <DButton
         @action={{this.setUserStatusClick}}
@@ -45,7 +44,6 @@
         {{/if}}
       </DButton>
     </li>
-  {{/if}}
 
   <li class="summary">
     <LinkTo @route="user.summary" @model={{this.currentUser}}>
