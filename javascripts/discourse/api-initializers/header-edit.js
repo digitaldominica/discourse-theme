@@ -1,4 +1,4 @@
-import { h } from "virtual-dom";
+/*import { h } from "virtual-dom";
 import { withPluginApi } from "discourse/lib/plugin-api";
 import { iconNode } from "discourse-common/lib/icon-library";
 import I18n from "discourse-i18n";
@@ -96,4 +96,4 @@ export default {
         }
     });
   },
-};
+};*/
