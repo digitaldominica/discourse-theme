@@ -74,7 +74,7 @@
      {{avatar topic.lastPosterUser imageSize="tiny"}}
     </a>
    <a href="{{topic.lastPostUrl}}" class="last-reply">
-    {{d-icon "mdo-reply"}}&nbsp;@{{topic.lastPoster.user.username}}&nbsp;{{i18n "js.last_reply_lowercase"}} &nbsp; {{format-date topic.bumpedAt format="tiny" leaveAgo="true"}}
+    {{d-icon "mdo-reply"}}&nbsp;@{{topic.lastPoster.user.username}}&nbsp;{{i18n "js.last_reply_lowercase"}} &nbsp; {{format-date topic.bumpedAt format="medium" leaveAgo="true"}}
     </a>
 {{else}}
   
