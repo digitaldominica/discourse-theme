@@ -1,6 +1,6 @@
 ### **Inside Tech 3.2.0**
 
-Kodular Material [Discourse](https://discourse.org) theme modified by: [DPN MEDiA WORKS](https://dpnmediaworks.com)
+Inside Tech [Discourse](https://discourse.org) theme modified by: [DPN MEDiA WORKS](https://dpnmediaworks.com)
 ---
 
 Live Previvew at: https://insidetech.space
