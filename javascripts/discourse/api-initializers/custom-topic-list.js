@@ -12,7 +12,7 @@ export default {
         pluginId: "its-template",
 
         renderTopicListItem() {
-          const template = findRawTemplate("list/custom-topic-list-item");
+          const template = findRawTemplate("list/custom-topic-list");
           if (template) {
             this.set(
               "topicListItemContents", 
