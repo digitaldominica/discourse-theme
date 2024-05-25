@@ -67,7 +67,6 @@
 
       {{discourse-tags topic mode="list" tagsForUser=tagsForUser}}
 
-      {{raw "list/custom-posters-column" topic=topic}}
     </div>
  
   <div class="link-bottom-line">
