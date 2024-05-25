@@ -51,10 +51,7 @@
       {{#if topic.image_url}}
       <a href="{{topic.url}}">
         <div class="topic-image">
-          {{#if (theme-setting "topic_image_backdrop")}}
-            <div class="topic-image__backdrop" style="background-image: url({{topic.image_url}});" loading="lazy"></div>
-          {{/if}}
-          <img src="{{topic.image_url}}" class="topic-image__img" loading="lazy">
+             <img src="{{topic.image_url}}" class="topic-image__img" loading="lazy">
         </div>
       </a>
     {{/if}}
