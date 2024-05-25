@@ -67,9 +67,7 @@
 
       {{discourse-tags topic mode="list" tagsForUser=tagsForUser}}
 
-      <a href="{{topic.posters.0.user.userPath}}" data-user-card="{{topic.posters.0.user.username}}">
-        {{d-icon "mdo-push_pin"}} &nbsp; {{avatar topic.posters.[0].user imageSize="tiny"}} &nbsp; {{~topic.posters.0.user.username~}}
-      </a>
+      {{raw "list/custom-posters-column" topic=topic}}
     </div>
  
   <div class="link-bottom-line">
