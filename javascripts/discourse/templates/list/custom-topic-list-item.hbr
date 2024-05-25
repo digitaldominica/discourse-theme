@@ -55,7 +55,7 @@
         </div>
       {{/if}}
      {{#if topic.image_url}}
-        <a href="{{topic.lastUnreadUrl}}">
+        <a href="{{topic.url}}">
           <div class="topic-image">
             {{#if (theme-setting "topic_image_backdrop")}}
               <div class="topic-image__backdrop" style="background-image: url({{topic.image_url}});" loading="lazy"></div>
