@@ -48,13 +48,13 @@
           {{~raw "topic-post-badges" unreadPosts=topic.unread_posts unseen=topic.unseen url=topic.lastUnreadUrl newDotText=newDotText}}
         {{~/if}}
       </div>
-      {{#if topic.image_url}}
+      <!--{{#if topic.image_url}}
       <a href="{{topic.url}}">
         <div class="topic-image">
              <img src="{{topic.image_url}}" class="topic-image__img" loading="lazy">
         </div>
       </a>
-    {{/if}}
+    {{/if}}-->
       {{~raw-plugin-outlet name="topic-list-after-title"}}
       {{#if topic.hasExcerpt}}
         <div class="topic-excerpt">
